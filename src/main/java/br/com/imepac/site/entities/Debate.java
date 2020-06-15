@@ -29,11 +29,12 @@ public class Debate {
 	private String texto;
 	private int tipo;
 	private int visivel;
+	
 	@OneToOne
 	@JoinColumn(name = "usuarios_id", referencedColumnName = "id")
 	private Usuario usuario;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "debate")
 	private List<Comentario> comentarios;
 	
 	

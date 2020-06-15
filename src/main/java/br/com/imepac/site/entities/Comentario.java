@@ -21,11 +21,14 @@ public class Comentario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	
 	@DateTimeFormat(pattern="dd/MM/yyyy")
 	private Calendar data;
+	
 	@DateTimeFormat(pattern="hh:mm")
 	private Calendar hora;
-	@ManyToOne
+	
+	@OneToOne
 	@JoinColumn(name = "usuarios_id", referencedColumnName = "id")
 	private Usuario usuario;
 	

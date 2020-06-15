@@ -63,14 +63,13 @@
 						<a href="/scripts/debates/comentarios/${debate.id}" class="button big">Comentarios</a>
 					</header>
 				</div>
-				
-			</section>
-			
-			<div class="comentario">
-			${debate.usuario.nome} diz:
-			${debate.comentarios}
-			
+				<c:forEach items="${debate.comentarios }" var="comentario">
+				<div class="comentario">
+			${comentario.usuario.nome} diz:
+			${comentario.texto}
  			</div>
-			
+				
+				</c:forEach>
+			</section>			
 	</body>
 </html>
