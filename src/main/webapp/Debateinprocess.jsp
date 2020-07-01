@@ -25,10 +25,14 @@
 	</head>
 	<style>
 	.comentario {
+	border: outset;
+    border-color: black;
 	padding: 20px;
-	margin: 10%; 
-	color: white;
-	background: #ababab;
+	margin: 1%;
+	margin-right: 5%;
+    margin-left: 5%; 
+	color: black;
+	background: #cacaca;
     border-radius: 15px;
     width: auto;
     height: auto;
@@ -44,10 +48,17 @@
                                                   <button type="submit"><i class="fa fa-search"></i></button>
 					</form>
 				<nav id="nav">
-					<ul>
-						<li><a href="/index.html">Inicio</a></li>
-						<li><a href="/scripts/debates/listar">Debates</a></li>
-						<li><a href="/scripts/debates/criardebates">Criar Debates</a></li>
+					<ul class="submenn">
+						<li><a href="/index.jsp">Inicio</a></li>
+						<li><a href="/debates/listar">Debates</a></li>
+						<li><a href="/debates/private/criardebates">Criar Debates</a></li>
+		
+						<li><a href="Login.html">Login</a>
+							<ul class="subm">
+								<li><a href="/Login.jsp">Login</a></li>
+								<li><a href="/usuarios/logout">Logout</a></li></li>
+								<li><a href="/usuarios/private/gerenciar">Usuarios</a></li></li>
+							</ul>
 					</ul>
 				</nav>
 			</header>
@@ -59,10 +70,10 @@
 						<img src="/images/pic00${debate.id}.jpg" width="360" height="200" />
 						<h2>${debate.titulo}</h2>
 						<p>${debate.texto} 
-						Autor: ${debate.id}</p>
-						<a href="/scripts/debates/comentarios/${debate.id}" class="button big">Comentarios</a>
+						Autor: ${debate.usuario.nome}</p>
 					</header>
 				</div>
+				
 				<c:forEach items="${debate.comentarios }" var="comentario">
 				<div class="comentario">
 			${comentario.usuario.nome} diz:
@@ -70,6 +81,8 @@
  			</div>
 				
 				</c:forEach>
+				
+			<p>Voçê pode também pode comentar, bastar entrar em sua conta no app Opina Ai e opinar sobre o debate escolhido...</p>
 			</section>			
 	</body>
 </html>

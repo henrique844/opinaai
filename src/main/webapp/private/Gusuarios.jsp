@@ -23,10 +23,17 @@
 			<header id="header">
 				<h1><a href="index.html">Opina Ai</a></h1>
 				<nav id="nav">
-					<ul>
-						<li><a href="/index.html">Inicio</a></li>
-						<li><a href="/scripts/debates/listar">Debates</a></li>
-						<li><a href="/scripts/debates/criardebates">Criar Debates</a></li>
+					<ul class="submenn">
+						<li><a href="/index.jsp">Inicio</a></li>
+						<li><a href="/debates/listar">Debates</a></li>
+						<li><a href="/debates/private/criardebates">Criar Debates</a></li>
+		
+						<li><a href="Login.html">Login</a>
+							<ul class="subm">
+								<li><a href="/Login.jsp">Login</a></li>
+								<li><a href="/usuarios/logout">Logout</a></li></li>
+								<li><a href="/usuarios/private/gerenciar">Usuarios</a></li></li>
+							</ul>
 					</ul>
 				</nav>
 			</header>
@@ -37,7 +44,7 @@
 
 					<header class="major">
 						<h2>Gerenciamento de Usuarios - ADM</h2>
-						<p>ADM - Nome do Administrador</p>
+						<p>${SessionKey} - Nome do Administrador</p>
 					</header>
 
 					<!-- Text -->
@@ -70,8 +77,8 @@
 					<td><input type="checkbox" value="${usuario.id}" name="ids" /></td>
 					<td>${usuario.id}</td>
 					<td>${usuario.nome}</td>
-					<td><a href="/scripts/usuarios/excluir/${usuario.id}">excluir</a></td>
-					<td>editar</td>
+					<td><a href="/usuarios/private/excluir/${usuario.id}">Excluir</a></td>
+					<td><a href="/usuarios/private/visualizar/${usuario.id}">Editar</a></td>
 			</c:forEach>
 		</tbody>
 		<tfoot></tfoot>

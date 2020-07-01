@@ -23,10 +23,17 @@
 			<header id="header">
 				<h1><a href="index.html">Opina Ai</a></h1>
 				<nav id="nav">
-					<ul>
-						<li><a href="/index.html">Inicio</a></li>
-						<li><a href="/scripts/debates/listar">Debates</a></li>
-						<li><a href="/scripts/debates/criardebates">Criar Debates</a></li>
+					<ul class="submenn">
+						<li><a href="/index.jsp">Inicio</a></li>
+						<li><a href="/debates/listar">Debates</a></li>
+						<li><a href="/debates/private/criardebates">Criar Debates</a></li>
+		
+						<li><a href="Login.html">Login</a>
+							<ul class="subm">
+								<li><a href="/Login.jsp">Login</a></li>
+								<li><a href="/usuarios/logout">Logout</a></li></li>
+								<li><a href="/usuarios/private/gerenciar">Usuarios</a></li></li>
+							</ul>
 					</ul>
 				</nav>
 			</header>

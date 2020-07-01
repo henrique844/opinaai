@@ -23,14 +23,15 @@
 				<h1><a href="index.html">Opina Ai</a></h1>
 				<nav id="nav">
 					<ul class="submenn">
-						<li><a href="/index.html">Inicio</a></li>
-						<li><a href="/scripts/debates/listar">Debates</a></li>
-						<li><a href="/scripts/debates/criardebates">Criar Debates</a></li>
+						<li><a href="/index.jsp">Inicio</a></li>
+						<li><a href="/debates/listar">Debates</a></li>
+						<li><a href="/debates/private/criardebates">Criar Debates</a></li>
 		
 						<li><a href="Login.html">Login</a>
 							<ul class="subm">
-								<li><a href="/Login.html">Login/Logout</a></li>
-								<li><a href="/scripts/usuarios/gerenciar">Usuarios</a></li></li>
+								<li><a href="/Login.jsp">Login</a></li>
+								<li><a href="/usuarios/logout">Logout</a></li></li>
+								<li><a href="/usuarios/private/gerenciar">Usuarios</a></li></li>
 							</ul>
 					</ul>
 				</nav>
@@ -52,6 +53,8 @@
   <input type="text" id="nomedebate" name="titulo" value=""><br>
   <h3>Descrição</h3>
   <input type="text" id="descricao" name="texto" value=""><br><br>
+  <h3>Imagem</h3>
+  <input type="file" name="arquivos" class="btn btn-success"  accept="image/png, image/jpeg"  multiple /> 
 <h3>Categoria</h3>
   <input type="text" id="categoria" name="categoria" value=""><br><br>
   <h3>Status</h3>

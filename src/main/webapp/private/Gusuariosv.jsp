@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -6,7 +7,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src=".../css/ie/html5shiv.js"></script><![endif]-->
+		<!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/skel.min.js"></script>
 		<script src="/js/skel-layers.min.js"></script>
@@ -42,23 +43,30 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Cadastro</h2>
-						<p>Com seu cadatro voce podera criar e debater sobre qualquer assunto ou debate existente.</p>
+						<h2>Gerenciamento de Usuarios - ADM</h2>
+						<p>${SessionKey} - Nome do Administrador</p>
 					</header>
 
 					<!-- Text -->
-<div class="login">
-<form action="/scripts/usuarios/salvar" method="post" >
-<h3>Seus Dados</h3>
+<div class="Listagem">
+<form action="/usuarios/private/update" method="post">
+<h3>Editar</h3>
 <p>Nome</p>
-  <input type="text" id="usuarionome" name="nome" value=""><br>
+  <input type="text" id="usuarionome" name="nome" value="${usuario.nome}"><br>
 <p>Email</p>
-  <input type="text" id="usuarioemail" name="email" value=""><br>
+  <input type="text" id="usuarioemail" name="email" value="${usuario.email}"><br>
 <p>Data de nascimento</p>
-  <input id="date" name="data" type="date" style="margin-bottom: 2em">
+  <input id="date" type="date" style="margin-bottom: 2em">
 <p>Senha</p>
-  <input type="password" id="usuariopassword" name="senha" value=""><br>
+  <input type="password" id="usuariopassword" name="senha" value="${usuario.senha}"><br>
+<p>Tipo de Usuario</p>
+  <input type="radio" id="usuario" name="tipo" value="0">
+  <label for="usuario">Usuário</label><br>
+  <input type="radio" id="superuser" name="tipo" value="1">
+  <label for="superuser">Administrador</label><br>
 	<input type="submit" value="Salvar Dados">
 	</form>
+<h3>Listagem</h3>	
+</form>
 	</body>
 </html>

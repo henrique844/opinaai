@@ -24,39 +24,39 @@ import br.com.imepac.site.interfaces.IDebateServico;
 import br.com.imepac.site.interfaces.IUsuarioServico;
 
 @Controller
-@RequestMapping(value = "/scripts/debates")
+@RequestMapping(value = "/debates")
 public class DebateController {
 
 	@Autowired
 	private IDebateServico debateServico;
 	
 
-	@RequestMapping(method = RequestMethod.GET, value = "criardebates")
+	@RequestMapping(method = RequestMethod.GET, value = "private/criardebates")
 	public String homePageCadastrar() {
-		return "CriarDebates";
+		return "private/CriarDebates";
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "salvar")
+	@RequestMapping(method = RequestMethod.POST, value = "private/salvar")
 	public ModelAndView salvar(@Valid Debate debate, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView();
 
 		if (bindingResult.hasErrors()) {
-			modelAndView.setViewName("criardebates");
+			modelAndView.setViewName("private/criardebates");
 			modelAndView.addObject("message_error", "Foram encontrados erros!");
 			modelAndView.addObject(debate);
 		} else {
 			debateServico.save(debate);
-			modelAndView.setViewName("redirect:gerenciar");
+			modelAndView.setViewName("redirect:private/gerenciar");
 			modelAndView.addObject("message_success", "Cadastro efetuado com sucesso!");
 		}
 		return modelAndView;
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "gerenciar")
+	@RequestMapping(method = RequestMethod.GET, value = "private/gerenciar")
 	public ModelAndView gerenciar() {
 		List<Debate> debate = debateServico.reads();
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("Gdebates");
+		modelAndView.setViewName("private/Gdebates");
 		modelAndView.addObject("debate", debate);
 		return modelAndView;
 	}
@@ -68,8 +68,7 @@ public class DebateController {
 		modelAndView.addObject("debate", debate);
 		return modelAndView;
 	}
-
-
+	
 	@RequestMapping(method = RequestMethod.GET, value = "visualizar/{id}")
 	public ModelAndView visualizar(@PathVariable long id) {
 		Debate debate = debateServico.read(id);
@@ -79,11 +78,11 @@ public class DebateController {
 		
 		return modelAndView;
 	}
-	@RequestMapping(method = RequestMethod.GET, value = "excluir/{id}")
+	@RequestMapping(method = RequestMethod.GET, value = "private/excluir/{id}")
 	public ModelAndView deletar(@PathVariable long id) {
 		debateServico.delete(id);
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("redirect:gerenciar");
+		modelAndView.setViewName("redirect:private/gerenciar");
 		modelAndView.addObject("message_success","O registro foi deletado com sucesso!");
 		return modelAndView;
 	}

@@ -13,6 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -23,9 +24,10 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String nome;
+	@UniqueElements
 	private String email;
 	private String senha;
-	private int tipo;
+	private String tipo;
 	private Calendar data;
 	
 	
@@ -53,10 +55,10 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public int getTipo() {
+	public String getTipo() {
 		return tipo;
 	}
-	public void setTipo(int tipo) {
+	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
 	public Calendar getData() {

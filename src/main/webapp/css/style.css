@@ -1122,20 +1122,20 @@ float:left;
 .submenn li a{text-decoration:none; padding:5px 10px; display:block;}
  
 .submenn li a:hover{
-color:#fff; 
+color:#202222; 
 text-shadow:0px 0px 5px #fff; 
 }
 .submenn li  ul{
 position:absolute; 
 top:25px; 
-left:0;
-background-color:#fff; 
+left:-42px;
+background-color:#202222; 
 display:none;
 }
 	
 .submenn li:hover ul, .menu li.over ul{display:block;}
 .submenn li ul li{
-background:#333;
+background:#202222;
 display:block; 
 width:150px;
 }

@@ -10,6 +10,7 @@ import br.com.imepac.site.entities.repositories.IComentarioRepository;
 import br.com.imepac.site.entities.repositories.IUsuarioRepository;
 import br.com.imepac.site.interfaces.IComentarioServico;
 import br.com.imepac.site.interfaces.IUsuarioServico;
+import br.com.imepac.site.login.LoginForm;
 
 @Service
 public class UsuarioServicoImpl implements IUsuarioServico {
@@ -36,4 +37,11 @@ public class UsuarioServicoImpl implements IUsuarioServico {
 	public void update(Usuario usuario) {
 		usuarioRepository.save(usuario);
 	}
+
+	@Override
+	public boolean autenticacao(LoginForm loginForm) {
+		
+		return usuarioRepository.findByEmailAndSenha(loginForm.getEmail(), loginForm.getSenha()) != null; 
+	}
+
 }
