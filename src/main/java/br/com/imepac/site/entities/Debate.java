@@ -16,6 +16,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "debates")
 public class Debate {
@@ -26,6 +28,7 @@ public class Debate {
 	private String titulo;
 	private String categoria;
 	private String data;
+	private String hora;
 	private String texto;
 	private int tipo;
 	private int visivel;
@@ -63,11 +66,18 @@ public class Debate {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
+	
 	public String getData() {
 		return data;
 	}
 	public void setData(String data) {
 		this.data = data;
+	}
+	public String getHora() {
+		return hora;
+	}
+	public void setHora(String hora) {
+		this.hora = hora;
 	}
 	public String getTexto() {
 		return texto;

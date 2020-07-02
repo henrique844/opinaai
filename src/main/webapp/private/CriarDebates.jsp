@@ -48,13 +48,13 @@
 
 					<!-- Text -->
 <div class="criando">
-<form action="/scripts/debates/salvar" method="post">
+<form action="/debates/private/salvar" method="post" enctype="multipart/form-data">
 <h3>Titulo</h3>
   <input type="text" id="nomedebate" name="titulo" value=""><br>
   <h3>Descrição</h3>
   <input type="text" id="descricao" name="texto" value=""><br><br>
   <h3>Imagem</h3>
-  <input type="file" name="arquivos" class="btn btn-success"  accept="image/png, image/jpeg"  multiple /> 
+  <input type="file" name="file" class="btn btn-success"  accept="image/png, image/jpeg"  multiple /> 
 <h3>Categoria</h3>
   <input type="text" id="categoria" name="categoria" value=""><br><br>
   <h3>Status</h3>

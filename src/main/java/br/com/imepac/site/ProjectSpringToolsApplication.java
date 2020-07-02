@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.XmlWebApplicationContext;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -30,9 +31,11 @@ public class ProjectSpringToolsApplication implements WebApplicationInitializer{
 	    bean.setSuffix(".jsp");
 	    return bean;
 	}
+
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ProjectSpringToolsApplication.class, args);
 	}
+	
 
 }

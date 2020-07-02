@@ -60,7 +60,7 @@
 					<td>${debate.id}</td>
 					<td><a href="visualizar/${debate.id}">${debate.titulo}</a></td>
 					<td>${debate.categoria}</td>
-					<td><a href="/scripts/debates/excluir/${debate.id}">excluir</a></td>
+					<td><a href="/debates/private/excluir/${debate.id}">excluir</a></td>
 					<td>editar</td>
 			</c:forEach>
 		</tbody>

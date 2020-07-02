@@ -1,9 +1,17 @@
 package br.com.imepac.site.controllers;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import org.hibernate.sql.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -13,6 +21,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.imepac.site.entities.Comentario;
@@ -29,7 +40,6 @@ public class DebateController {
 
 	@Autowired
 	private IDebateServico debateServico;
-	
 
 	@RequestMapping(method = RequestMethod.GET, value = "private/criardebates")
 	public String homePageCadastrar() {
@@ -37,7 +47,7 @@ public class DebateController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "private/salvar")
-	public ModelAndView salvar(@Valid Debate debate, BindingResult bindingResult) {
+	public ModelAndView salvar(@Valid Debate debate,@RequestParam MultipartFile file,HttpSession session, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView();
 
 		if (bindingResult.hasErrors()) {
@@ -45,9 +55,32 @@ public class DebateController {
 			modelAndView.addObject("message_error", "Foram encontrados erros!");
 			modelAndView.addObject(debate);
 		} else {
-			debateServico.save(debate);
-			modelAndView.setViewName("redirect:private/gerenciar");
+			
+			LocalDateTime time = LocalDateTime.now();
+			int datadia = time.getDayOfMonth();
+		
+			
+			String nome = "pic00" + debate.getId();
+			
+			String path=session.getServletContext().getRealPath("images/");  
+	       
+	          
+	        System.out.println(path+" "+nome);  
+	        try{  
+	        byte barr[]=file.getBytes();  
+	          
+	        BufferedOutputStream bout=new BufferedOutputStream(  
+	                 new FileOutputStream(path+"/"+nome+".jpg"));  
+	        bout.write(barr);  
+	        bout.flush();  
+	        bout.close();  
+	          
+	        }catch(Exception e){System.out.println(e);}  
+			
+	        debateServico.save(debate);
+			modelAndView.setViewName("redirect:gerenciar");
 			modelAndView.addObject("message_success", "Cadastro efetuado com sucesso!");
+
 		}
 		return modelAndView;
 	}
@@ -82,7 +115,7 @@ public class DebateController {
 	public ModelAndView deletar(@PathVariable long id) {
 		debateServico.delete(id);
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("redirect:private/gerenciar");
+		modelAndView.setViewName("redirect:gerenciar");
 		modelAndView.addObject("message_success","O registro foi deletado com sucesso!");
 		return modelAndView;
 	}

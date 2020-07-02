@@ -1,6 +1,7 @@
 package br.com.imepac.site.entities;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -28,7 +29,8 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private String tipo;
-	private Calendar data;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+    private Date data;
 	
 	
 	public long getId() {
@@ -61,12 +63,13 @@ public class Usuario {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public Calendar getData() {
+	public Date getData() {
 		return data;
 	}
-	public void setData(Calendar data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
+	
 	
 	
 	
