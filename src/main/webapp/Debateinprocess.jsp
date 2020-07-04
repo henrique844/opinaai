@@ -37,6 +37,11 @@
     width: auto;
     height: auto;
 	}
+	.data {
+	margin-top: -27px;
+    border: antiquewhite;
+    font-size: 14px;
+	}
 	</style>
 	<body>
 
@@ -68,6 +73,7 @@
 				<div class="container">
 					<header class="major">
 						<img src="/images/pic00${debate.id}.jpg" width="360" height="200" />
+						<div class="data"><p>${debate.data}</p></div>
 						<h2>${debate.titulo}</h2>
 						<p>${debate.texto} 
 						Autor: ${debate.usuario.nome}</p>

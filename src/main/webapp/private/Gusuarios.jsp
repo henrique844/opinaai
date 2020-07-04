@@ -44,7 +44,7 @@
 
 					<header class="major">
 						<h2>Gerenciamento de Usuarios - ADM</h2>
-						<p>${SessionKey} - Nome do Administrador</p>
+						<p>${SessionName}</p>
 					</header>
 
 					<!-- Text -->

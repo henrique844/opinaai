@@ -37,11 +37,11 @@ public class UsuarioServicoImpl implements IUsuarioServico {
 	public void update(Usuario usuario) {
 		usuarioRepository.save(usuario);
 	}
-
 	@Override
 	public boolean autenticacao(LoginForm loginForm) {
 		
 		return usuarioRepository.findByEmailAndSenha(loginForm.getEmail(), loginForm.getSenha()) != null; 
 	}
+	
 
 }

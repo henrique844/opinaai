@@ -7,7 +7,7 @@
 -->
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Generic - Interphase by TEMPLATED</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
@@ -60,7 +60,7 @@
 						<c:forEach items="${debate}" var="debate">
 						<section class="feature 6u 12u$(small)">
 							<img class="image fit" src="/images/pic00${debate.id}.jpg" alt="" width="583" height="202" />
-                            <h3 class="title" ><a href="/scripts/debates/visualizar/${debate.id}">${debate.titulo}</a></h3>
+                            <h3 class="title" ><a href="/debates/visualizar/${debate.id}">${debate.titulo}</a></h3>
 							<p>${debate.texto}</p>
 						</section>
 						</c:forEach>

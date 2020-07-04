@@ -36,6 +36,10 @@ public class UsuarioController {
 	public String homePageCadastrar() {
 		return "cadastro";
 	}
+	@RequestMapping(method = RequestMethod.GET, value = "login")
+	public String homePagelogin() {
+		return "Login";
+	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "salvar")
 	public ModelAndView salvar(@Valid Usuario usuario, BindingResult bindingResult) {
@@ -88,6 +92,7 @@ public class UsuarioController {
 		}
 		else {
 			if(usuarioServico.autenticacao(loginForm) == true) {
+				
 				httpSession.setAttribute("SessionKey", true);
 				httpSession.setAttribute("SessionName", loginForm.getEmail());
 				modelAndView.setViewName("redirect:private/gerenciar");

@@ -48,7 +48,7 @@
 
 					<!-- Text -->
 <div class="login">
-<form action="/scripts/usuarios/salvar" method="post" >
+<form action="/usuarios/private/salvar" method="post" >
 <h3>Seus Dados</h3>
 <p>Nome</p>
   <input type="text" id="usuarionome" name="nome" value=""><br>

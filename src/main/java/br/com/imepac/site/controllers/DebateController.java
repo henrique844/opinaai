@@ -57,9 +57,10 @@ public class DebateController {
 		} else {
 			
 			LocalDateTime time = LocalDateTime.now();
-			int datadia = time.getDayOfMonth();
+			debate.setData(time);
 		
 			
+			if(!(file.isEmpty())) {
 			String nome = "pic00" + debate.getId();
 			
 			String path=session.getServletContext().getRealPath("images/");  
@@ -75,7 +76,7 @@ public class DebateController {
 	        bout.flush();  
 	        bout.close();  
 	          
-	        }catch(Exception e){System.out.println(e);}  
+	        }catch(Exception e){System.out.println(e);}  }
 			
 	        debateServico.save(debate);
 			modelAndView.setViewName("redirect:gerenciar");

@@ -2,6 +2,7 @@ package br.com.imepac.site.entities;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -27,8 +28,7 @@ public class Debate {
 	private long id;
 	private String titulo;
 	private String categoria;
-	private String data;
-	private String hora;
+	private LocalDateTime data;
 	private String texto;
 	private int tipo;
 	private int visivel;
@@ -60,24 +60,18 @@ public class Debate {
 	public void setId(long id) {
 		this.id = id;
 	}
+	
+	public LocalDateTime getData() {
+		return data;
+	}
+	public void setData(LocalDateTime data) {
+		this.data = data;
+	}
 	public String getTitulo() {
 		return titulo;
 	}
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
-	}
-	
-	public String getData() {
-		return data;
-	}
-	public void setData(String data) {
-		this.data = data;
-	}
-	public String getHora() {
-		return hora;
-	}
-	public void setHora(String hora) {
-		this.hora = hora;
 	}
 	public String getTexto() {
 		return texto;

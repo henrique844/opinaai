@@ -5,6 +5,7 @@ import java.util.List;
 import br.com.imepac.site.entities.Usuario;
 import br.com.imepac.site.login.LoginForm;
 
+
 public interface IUsuarioServico {
 	public void save(Usuario usuario);
 	public List<Usuario> reads();

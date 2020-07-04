@@ -69,6 +69,8 @@ public class Usuario {
 	public void setData(Date data) {
 		this.data = data;
 	}
+
+
 	
 	
 	
