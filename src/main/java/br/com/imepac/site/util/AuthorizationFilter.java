@@ -25,8 +25,7 @@ public class AuthorizationFilter extends HttpFilter {
 			if (request.getSession().getAttribute("SessionKey") == null) {
 				response.sendRedirect("/Login.jsp");
 			}
-			//if (request.getSession().getAttribute("SessionKey") == "false") {
-				//response.sendRedirect("/Login.jsp");}
+			
 		}
 		super.doFilter(request, response, chain);
 	}

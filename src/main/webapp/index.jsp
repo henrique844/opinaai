@@ -1,13 +1,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<!--
-	Interphase by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html lang="en">
+<html lang="pt">
 	<head>
-		<title>Opina Ai</title>
+		<title>Opina Aí</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf 8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -26,7 +21,7 @@
 
 		<!-- Header -->
 			<header id="header">
-				<h1><a href="index.html">Opina Ai</a></h1>
+				<h1><a href="index.html">Opina Aí</a></h1>
 				<nav id="nav">
 					<ul class="submenn">
 						<li><a href="/index.jsp">Inicio</a></li>
@@ -88,22 +83,22 @@
 					<div class="row">
 						<section class="feature 6u 12u$(small)">
 							<img class="image fit" src="images/pic001.jpg" alt="" />
-							<h3 class="title"><a href="/scripts/debates/visualizar/2">Covid-19 na sua Cidade?</a></h3>
+							<h3 class="title"><a href="/debates/visualizar/2">Covid-19 na sua Cidade?</a></h3>
 							<p>Sua Cidade ja foi afetada ? Como o Covid-19 afetou sua vida ? acha que o governo ta agindo de forma correta ?</p>
 						</section>
 						<section class="feature 6u$ 12u$(small)">
 							<img class="image fit" src="images/pic002.jpg" alt="" />
-							<h3 class="title"><a href="/scripts/debates/visualizar/1">Estudos pela internet</a></h3>
+							<h3 class="title"><a href="/debates/visualizar/1">Estudos pela internet</a></h3>
 							<p>Descreva sua opiniao sobre os estudos online e como sua institui��o tem lidado com esse problema. Esse problema pode afetar os futuros profissonais?</p>
 						</section>
 						<section class="feature 6u 12u$(small)">
 							<img class="image fit" src="images/pic003.jpg" alt="" />
-							<h3 class="title"><a href="/scripts/debates/visualizar/3">As fraudes diante da dificuldade</a></h3>
+							<h3 class="title"><a href="/debates/visualizar/3">As fraudes diante da dificuldade</a></h3>
 							<p>O governo liberar ajuda Emergencial foi uma grande entrada para diversos aproveitadores criar diversas formas de enganar a popula��o para captar dados bancarios. Como lidar com isso ? O que deve ser feito para Acabar com esse problema?</p>
 						</section>
 						<section class="feature 6u$ 12u$(small)">
 							<img class="image fit" src="images/pic004.jpg" alt="" />
-							<h3 class="title"><a href="/scripts/debates/visualizar/4">Solução ou problema ?</a></h3>
+							<h3 class="title"><a href="/debates/visualizar/4">Solução ou problema ?</a></h3>
 							<p>A paralisacao brasileira foi realmente necessaria ? deveria ser maior ou menor ? poderia ser antes ou depois ?</p>
 						</section>
 					</div>

@@ -44,7 +44,7 @@
 
 					<header class="major">
 						<h2>Gerenciamento de Usuarios - ADM</h2>
-						<p>${SessionKey} - Nome do Administrador</p>
+						<p>${SessionName}</p>
 					</header>
 
 					<!-- Text -->
@@ -56,7 +56,7 @@
 <p>Email</p>
   <input type="text" id="usuarioemail" name="email" value="${usuario.email}"><br>
 <p>Data de nascimento</p>
-  <input id="date" type="date" style="margin-bottom: 2em">
+  <input id="date" type="date" value="${usuario.data}" style="margin-bottom: 2em">
 <p>Senha</p>
   <input type="password" id="usuariopassword" name="senha" value="${usuario.senha}"><br>
 <p>Tipo de Usuario</p>

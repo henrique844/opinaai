@@ -90,7 +90,7 @@ public class DebateController {
 	public ModelAndView gerenciar() {
 		List<Debate> debate = debateServico.reads();
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("private/Gdebates");
+		modelAndView.setViewName("private/ADM/Gdebates");
 		modelAndView.addObject("debate", debate);
 		return modelAndView;
 	}

@@ -48,16 +48,18 @@
 
 					<!-- Text -->
 <div class="login">
-<form action="/usuarios/private/salvar" method="post" >
+<form action="/usuarios/salvar" method="post" >
 <h3>Seus Dados</h3>
 <p>Nome</p>
   <input type="text" id="usuarionome" name="nome" value=""><br>
 <p>Email</p>
   <input type="text" id="usuarioemail" name="email" value=""><br>
+  <div class="mensagemerror"><p>${email_error}</p></div>
 <p>Data de nascimento</p>
   <input id="date" name="data" type="date" style="margin-bottom: 2em">
 <p>Senha</p>
   <input type="password" id="usuariopassword" name="senha" value=""><br>
+  
 	<input type="submit" value="Salvar Dados">
 	</form>
 	</body>

@@ -13,5 +13,6 @@ public interface IUsuarioServico {
 	public void delete(long id);
 	public void update(Usuario usuario);
 	public boolean autenticacao(LoginForm loginForm);
+	public boolean busca(String string);
 
 }

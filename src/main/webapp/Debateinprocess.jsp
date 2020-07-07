@@ -7,9 +7,9 @@
 -->
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="ISO-8859-1">
 		<title>Generic - Interphase by TEMPLATED</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="content-type" content="text/html" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->

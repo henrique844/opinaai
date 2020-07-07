@@ -50,13 +50,21 @@ public class UsuarioController {
 			modelAndView.addObject("message_error", "Foram encontrados erros!");
 			modelAndView.addObject(usuario);
 		} else {
+			
+			if(usuarioServico.busca(usuario.getEmail())== true) {
+				modelAndView.setViewName("cadastro");
+				modelAndView.addObject("email_error", "Email ja cadastrado!");
+			}
+			else{ String x = "1";
+			usuario.setTipo(x);
 			usuarioServico.save(usuario);
 			modelAndView.setViewName("redirect:login");
 			modelAndView.addObject("message_success", "Cadastro efetuado com sucesso!");
+			}
 		}
 		return modelAndView;
 	}
-	@RequestMapping(method = RequestMethod.POST, value = "update")
+	@RequestMapping(method = RequestMethod.POST, value = "private/update")
 	public ModelAndView update(Usuario usuario, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView();
 
@@ -66,7 +74,7 @@ public class UsuarioController {
 			modelAndView.addObject(usuario);
 		} else {
 			usuarioServico.update(usuario);
-			modelAndView.setViewName("redirect:/private/gerenciar");
+			modelAndView.setViewName("redirect:private/gerenciar");
 			modelAndView.addObject("message_success", "Cadastro efetuado com sucesso!");
 		}
 		return modelAndView;
@@ -76,7 +84,7 @@ public class UsuarioController {
 	public ModelAndView gerenciar() {
 		List<Usuario> usuarios = usuarioServico.reads();
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("private/Gusuarios");
+		modelAndView.setViewName("private/ADM/Gusuarios");
 		modelAndView.addObject("usuarios",usuarios);
 		return modelAndView;
 	}
@@ -86,7 +94,7 @@ public class UsuarioController {
 		ModelAndView modelAndView = new ModelAndView();
 		
 		if(bindingResult.hasErrors()) {
-			modelAndView.setViewName("login");
+			modelAndView.setViewName("Login");
 			modelAndView.addObject("message_error", "Foram encontrados erros!");
 			modelAndView.addObject(loginForm);
 		}
@@ -95,13 +103,15 @@ public class UsuarioController {
 				
 				httpSession.setAttribute("SessionKey", true);
 				httpSession.setAttribute("SessionName", loginForm.getEmail());
+				httpSession.setAttribute("SessionTipo", loginForm.getTipo());
+				
 				modelAndView.setViewName("redirect:private/gerenciar");
 				
 				
 			}
 			else {
 				modelAndView.addObject("message_error", "Dados de acesso incorretos!");
-				modelAndView.setViewName("login");
+				modelAndView.setViewName("Login");
 				
 			}
 			
@@ -113,7 +123,7 @@ public class UsuarioController {
 	public ModelAndView visualizar(@PathVariable long id) {
 		Usuario usuario = usuarioServico.read(id);
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("private/Gusuariosv");
+		modelAndView.setViewName("private/ADM/Gusuariosv");
 		modelAndView.addObject(usuario);
 		return modelAndView;
 	}
@@ -121,7 +131,7 @@ public class UsuarioController {
 	public ModelAndView deletar(@PathVariable long id) {
 		usuarioServico.delete(id);
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("redirect:/scripts/usuarios/gerenciar");
+		modelAndView.setViewName("redirect:/usuarios/private/gerenciar");
 		modelAndView.addObject("message_success","O registro foi deletado com sucesso!");
 		return modelAndView;
 	}
@@ -132,6 +142,7 @@ public class UsuarioController {
 		
 		httpSession.removeAttribute("SessionKey");
 		httpSession.invalidate();
+		
 		
 		
 			modelAndView.setViewName("/Login");

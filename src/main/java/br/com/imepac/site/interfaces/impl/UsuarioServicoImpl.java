@@ -42,6 +42,8 @@ public class UsuarioServicoImpl implements IUsuarioServico {
 		
 		return usuarioRepository.findByEmailAndSenha(loginForm.getEmail(), loginForm.getSenha()) != null; 
 	}
-	
+	public boolean busca(String string) {
+		return usuarioRepository.findByEmail(string) !=null;
+	}
 
 }
