@@ -8,6 +8,7 @@ public class LoginForm {
 		@NotBlank(message = "Campo obrigatorio!")
 		private String senha;
 		private String tipo;
+		private String nome;
 		public String getEmail() {
 			return email;
 		}
@@ -25,6 +26,12 @@ public class LoginForm {
 		}
 		public void setTipo(String tipo) {
 			this.tipo = tipo;
+		}
+		public String getNome() {
+			return nome;
+		}
+		public void setNome(String nome) {
+			this.nome = nome;
 		}
 		
 		

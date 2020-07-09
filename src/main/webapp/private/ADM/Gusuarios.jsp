@@ -44,7 +44,7 @@
 
 					<header class="major">
 						<h2>Gerenciamento de Usuarios - ADM</h2>
-						<p>${SessionName},${SessionTipo} </p>
+						<p>${SessionName},${SessionTipo},${SessionEmail}</p>
 					</header>
 
 					<!-- Text -->

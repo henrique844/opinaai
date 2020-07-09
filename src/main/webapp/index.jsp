@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="pt">
 	<head>
-		<title>Opina Aí</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf 8" />
+		<title>Opina Ai</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		
@@ -21,7 +21,7 @@
 
 		<!-- Header -->
 			<header id="header">
-				<h1><a href="index.html">Opina Aí</a></h1>
+				<h1><a href="index.html">Opina Ai</a></h1>
 				<nav id="nav">
 					<ul class="submenn">
 						<li><a href="/index.jsp">Inicio</a></li>

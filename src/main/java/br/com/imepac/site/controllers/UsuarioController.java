@@ -102,8 +102,8 @@ public class UsuarioController {
 			if(usuarioServico.autenticacao(loginForm) == true) {
 				
 				httpSession.setAttribute("SessionKey", true);
-				httpSession.setAttribute("SessionName", loginForm.getEmail());
-				httpSession.setAttribute("SessionTipo", loginForm.getTipo());
+				httpSession.setAttribute("SessionEmail", loginForm.getEmail());
+				
 				
 				modelAndView.setViewName("redirect:private/gerenciar");
 				

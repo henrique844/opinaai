@@ -59,7 +59,7 @@ public class DebateController {
 			LocalDateTime time = LocalDateTime.now();
 			debate.setData(time);
 		
-			
+			debateServico.save(debate);
 			if(!(file.isEmpty())) {
 			String nome = "pic00" + debate.getId();
 			
@@ -78,7 +78,7 @@ public class DebateController {
 	          
 	        }catch(Exception e){System.out.println(e);}  }
 			
-	        debateServico.save(debate);
+	        
 			modelAndView.setViewName("redirect:gerenciar");
 			modelAndView.addObject("message_success", "Cadastro efetuado com sucesso!");
 

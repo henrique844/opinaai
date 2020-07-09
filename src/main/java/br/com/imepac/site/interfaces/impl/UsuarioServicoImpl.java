@@ -38,12 +38,10 @@ public class UsuarioServicoImpl implements IUsuarioServico {
 		usuarioRepository.save(usuario);
 	}
 	@Override
-	public boolean autenticacao(LoginForm loginForm) {
-		
-		return usuarioRepository.findByEmailAndSenha(loginForm.getEmail(), loginForm.getSenha()) != null; 
+	public boolean autenticacao(LoginForm loginForm) { 
+		return usuarioRepository.findByEmailAndSenha(loginForm.getEmail(), loginForm.getSenha()) != null;
 	}
 	public boolean busca(String string) {
 		return usuarioRepository.findByEmail(string) !=null;
 	}
-
 }
