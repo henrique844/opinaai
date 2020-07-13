@@ -1,5 +1,6 @@
 package br.com.imepac.site.entities;
 
+import java.time.LocalDateTime;
 import java.util.Calendar;
 
 import javax.persistence.Entity;
@@ -22,11 +23,7 @@ public class Comentario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@DateTimeFormat(pattern="dd/MM/yyyy")
-	private Calendar data;
-	
-	@DateTimeFormat(pattern="hh:mm")
-	private Calendar hora;
+	private LocalDateTime data;
 	
 	@OneToOne
 	@JoinColumn(name = "usuarios_id", referencedColumnName = "id")
@@ -64,20 +61,14 @@ public class Comentario {
 		this.id = id;
 	}
 
-	public Calendar getData() {
+	
+
+	public LocalDateTime getData() {
 		return data;
 	}
 
-	public void setData(Calendar data) {
+	public void setData(LocalDateTime data) {
 		this.data = data;
-	}
-
-	public Calendar getHora() {
-		return hora;
-	}
-
-	public void setHora(Calendar hora) {
-		this.hora = hora;
 	}
 
 	public String getTexto() {

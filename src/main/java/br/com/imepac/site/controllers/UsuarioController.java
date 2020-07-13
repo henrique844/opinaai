@@ -105,7 +105,7 @@ public class UsuarioController {
 				httpSession.setAttribute("SessionEmail", loginForm.getEmail());
 				
 				
-				modelAndView.setViewName("redirect:private/gerenciar");
+				modelAndView.setViewName("redirect:/Perfil.jsp");
 				
 				
 			}
@@ -149,6 +149,13 @@ public class UsuarioController {
 			modelAndView.addObject("message_error", "Logout Feito com sucesso!");
 		return modelAndView;
 	}
-	
+	@RequestMapping(method = RequestMethod.GET, value = "private/perfil")
+	public ModelAndView perfil() {
+		//Usuario usuario = usuarioServico.read(id);
+		ModelAndView modelAndView = new ModelAndView();
+		//modelAndView.setViewName("private/ADM/Gusuariosv");
+		//modelAndView.addObject(usuario);
+		return modelAndView;
+	}
 	
 }
