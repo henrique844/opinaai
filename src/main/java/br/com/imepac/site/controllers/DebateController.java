@@ -79,7 +79,7 @@ public class DebateController {
 	        }catch(Exception e){System.out.println(e);}  }
 			
 	        
-			modelAndView.setViewName("redirect:gerenciar");
+			modelAndView.setViewName("redirect:listar");
 			modelAndView.addObject("message_success", "Cadastro efetuado com sucesso!");
 
 		}
